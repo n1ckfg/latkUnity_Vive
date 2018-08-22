@@ -123,23 +123,24 @@ public class LatkInputVive : MonoBehaviour {
 		*/
 
 		if (steamControllerMain.menuPressed && steamControllerAlt.menuDown) {// || Input.GetKeyDown(KeyCode.K)) {
-			latk.inputNextLayer();
-		}
+            //latk.inputNextLayer();
+            latk.inputNewLayer();
+        }
 
-		if (steamControllerMain.menuPressed && steamControllerAlt.menuPressed && steamControllerMain.padDown) {// || Input.GetKeyDown(KeyCode.L)) {
-			latk.inputNewLayer();
+        if (steamControllerMain.menuPressed && steamControllerAlt.menuPressed && steamControllerMain.padDown) {// || Input.GetKeyDown(KeyCode.L)) {
+			//latk.inputNewLayer();
 		}
 
         // dir pad main
         if (steamControllerMain.padDown && !steamControllerMain.menuPressed && !steamControllerAlt.menuPressed) {
-            if (steamControllerMain.padDirDown) {
+            if (steamControllerMain.padDirUp) {
                 if (latk.brushMode == LightningArtist.BrushMode.ADD) {
                     latk.brushMode = LightningArtist.BrushMode.SURFACE;
                 } else {
                     latk.brushMode = LightningArtist.BrushMode.ADD;
                 }
-            } else if (steamControllerMain.padDirUp) {
-                latk.useCollisions = !latk.useCollisions;
+            } else if (steamControllerMain.padDirDown) {
+                //latk.useCollisions = !latk.useCollisions;
             }
         } else if (steamControllerMain.padPressed) {
             if (steamControllerMain.padDirLeft) latk.brushSizeInc();
@@ -148,11 +149,24 @@ public class LatkInputVive : MonoBehaviour {
 
         // dir pad alt
         if (steamControllerAlt.padDown && !steamControllerMain.menuPressed && !steamControllerAlt.menuPressed) {
-            //
+            if (steamControllerAlt.padDirUp) {
+                StartCoroutine(delayedUseCollisions(0.2f)); //latk.useCollisions = !latk.useCollisions;
+            } else if (steamControllerAlt.padDirLeft) {
+                latk.inputNextLayer();
+            } else if (steamControllerAlt.padDirRight) {
+                latk.inputPreviousLayer();
+            }
         } else if (steamControllerAlt.padPressed) {
             //
         }
 
+    }
+
+    IEnumerator delayedUseCollisions(float delay) {
+        yield return new WaitForSeconds(delay);
+        if (steamControllerAlt.padDirUp) {
+            latk.useCollisions = !latk.useCollisions;
+        }
     }
 
 }
