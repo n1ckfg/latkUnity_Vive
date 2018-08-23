@@ -63,7 +63,7 @@ public class LatkInputVive : MonoBehaviour {
 
 		// 4. frame back
 		if (steamControllerAlt.gripDown) {// || Input.GetKeyDown(KeyCode.LeftArrow)) {
-			latk.inputFrameBack();
+			latk.inputFrameForward();
 		}
 
 		//if ((!steamControllerAlt.gripped && blockAltGripButton) || Input.GetKeyUp(KeyCode.LeftArrow)) {
@@ -72,7 +72,7 @@ public class LatkInputVive : MonoBehaviour {
 
 		// 5. frame forward
 		if (steamControllerMain.gripDown) {// || Input.GetKeyDown(KeyCode.RightArrow)) {
-			latk.inputFrameForward();
+			latk.inputFrameBack();
 		}
 
 		//if ((!steamControllerMain.gripped && blockMainGripButton) || Input.GetKeyUp(KeyCode.RightArrow)) {
