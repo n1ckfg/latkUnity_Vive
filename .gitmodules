@@ -19,3 +19,6 @@
 [submodule "Assets/latkxSpeechWindows"]
 	path = Assets/latkxSpeechWindows
 	url = https://github.com/n1ckfg/latkxSpeechWindows
+[submodule "Assets/latkxGDrive"]
+	path = Assets/latkxGDrive
+	url = https://github.com/n1ckfg/latkxGDrive
