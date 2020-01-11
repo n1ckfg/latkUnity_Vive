@@ -16,3 +16,9 @@
 [submodule "Assets/latkxExtras"]
 	path = Assets/latkxExtras
 	url = https://github.com/LightningArtist/latkxExtras
+[submodule "Assets/latkxSpeechWindows"]
+	path = Assets/latkxSpeechWindows
+	url = https://github.com/n1ckfg/latkxSpeechWindows
+[submodule "Assets/latkxGDrive"]
+	path = Assets/latkxGDrive
+	url = https://github.com/n1ckfg/latkxGDrive
