@@ -27,3 +27,11 @@ Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.xr.oculus.standalone from version 1.29.1 to 1.38.3
+
+=== Mon Mar  9 10:00:35 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.analytics from version 3.2.2 to 3.2.3
